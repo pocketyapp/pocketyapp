@@ -4,15 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/elipsecolor1"
+    android:clipToPadding="false"
     tools:context=".MainActivity">
 
+
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="331dp"
+        android:layout_height="206dp"
+        android:alpha="1"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:lineSpacingExtra="4sp"
+        android:text="FIJA UN OBJETIVO IMPORTANTE\nDE AHORRO QUE QUIERAS\nALCANZAR, un móvil, un viaje,\nun coche..."
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#ffffff"
+        android:textSize="22dp"
+        app:fontFamily="sans-serif"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.462"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="SIGUIENTE"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.963" />
+
+    <Button
+        android:id="@+id/saltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SALTAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.963" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.858"
+        app:srcCompat="@drawable/bullet1" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
