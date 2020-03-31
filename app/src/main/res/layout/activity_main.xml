@@ -7,10 +7,9 @@
     android:background="@drawable/elipsecolor1"
     android:clipToPadding="false"
     tools:context=".MainActivity">
-
-
     <TextView
         android:id="@+id/textView"
+
         android:layout_width="331dp"
         android:layout_height="206dp"
         android:alpha="1"
