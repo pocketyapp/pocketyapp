@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2a363f"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="259dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="360dp"
+        android:editable="false"
+        android:ems="10"
+        android:hint=" USUARIO"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="478dp"
+        android:layout_height="578dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/titulo" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="27dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="252dp"
+        android:layout_marginRight="252dp"
+        app:layout_constraintEnd_toEndOf="@+id/editText"
+        app:layout_constraintTop_toTopOf="@+id/editText"
+        app:srcCompat="@drawable/persona" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="261dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint=" CONTRASEÑA"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="21dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="260dp"
+        android:layout_marginRight="260dp"
+        app:layout_constraintEnd_toEndOf="@+id/editText2"
+        app:layout_constraintTop_toTopOf="@+id/editText2"
+        app:srcCompat="@drawable/candado" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="223dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:text="INICIAR SESION"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="181dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:background="#656565"
+        android:text="REGISTRARSE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="260dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="8dp"
+        android:text="¿Has olvidado tu contraseña? Click aqui."
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
