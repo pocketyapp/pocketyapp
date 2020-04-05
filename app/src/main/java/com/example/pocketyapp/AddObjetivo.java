@@ -15,13 +15,16 @@ import java.util.ArrayList;
 public class AddObjetivo extends AppCompatActivity {
 
     Button btcancel;
+    EditText etNombre;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_objetivo);
-        
+
+        etNombre = findViewById(R.id.editText_NombreObjetivo);
+        etNombre.requestFocus();
 
         btcancel = findViewById(R.id.button_cancelar);
         btcancel.setOnClickListener(new View.OnClickListener(){

@@ -16,7 +16,8 @@
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:ems="10"
-        android:focusableInTouchMode="false"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:hint="Cantidad objetivo"
         android:inputType="numberDecimal"
         android:textColor="#FFFFFF"
@@ -52,7 +53,6 @@
         android:layout_marginRight="27dp"
         android:text="@string/cancelar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_guardarObjetivo" />
 
