@@ -16,6 +16,7 @@
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:ems="10"
+        android:focusableInTouchMode="true"
         android:hint="Cantidad objetivo"
         android:inputType="numberDecimal"
         android:textColor="#FFFFFF"
@@ -46,15 +47,14 @@
         android:layout_height="50dp"
         android:layout_marginStart="27dp"
         android:layout_marginLeft="27dp"
-        android:layout_marginTop="26dp"
         android:layout_marginEnd="27dp"
         android:layout_marginRight="27dp"
         android:layout_marginBottom="395dp"
         android:text="@string/cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_guardarObjetivo" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editText_NombreObjetivo"
@@ -66,6 +66,8 @@
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:ems="10"
+        android:focusable="auto"
+        android:focusableInTouchMode="true"
         android:hint="@string/nombre_objetivo"
         android:inputType="text"
         android:textColor="#FFFFFF"

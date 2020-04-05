@@ -28,7 +28,7 @@ public class AddObjetivo extends AppCompatActivity {
     }
 
     private void openMainMenuView() {
-        Intent intent = new Intent(this, AddObjetivo.class);
+        Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
     }
 }
