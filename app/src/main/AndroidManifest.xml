@@ -15,12 +15,13 @@
             android:name=".Onboarding2Act"
             android:label="@string/title_activity_onboarding2"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Onboarding2" />
         <activity
             android:name=".Login"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
