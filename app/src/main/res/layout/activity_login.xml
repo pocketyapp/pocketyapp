@@ -16,7 +16,7 @@
         android:ems="10"
         android:hint=" USUARIO"
         android:inputType="textPersonName"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -53,7 +53,7 @@
         android:ems="10"
         android:hint=" CONTRASEÑA"
         android:inputType="textPersonName"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +76,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:text="INICIAR SESION"
+        app:fontFamily="sans-serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
@@ -87,6 +88,7 @@
         android:layout_marginTop="8dp"
         android:background="#656565"
         android:text="REGISTRARSE"
+        app:fontFamily="sans-serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
@@ -98,6 +100,8 @@
         android:layout_marginTop="8dp"
         android:text="¿Has olvidado tu contraseña? Click aqui."
         android:textColor="#FFFFFF"
+        android:textIsSelectable="false"
+        app:fontFamily="sans-serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />

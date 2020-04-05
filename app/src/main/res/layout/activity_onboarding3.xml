@@ -6,27 +6,26 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg01"
     android:clipToPadding="false"
-    tools:context=".MainActivity">
+    tools:context=".Onboarding3Act">
+
 
     <TextView
-        android:id="@+id/txtOnboarding1"
-        android:layout_width="331dp"
-        android:layout_height="206dp"
+        android:id="@+id/txtOnboarding3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:alpha="1"
         android:gravity="center"
         android:inputType="textMultiLine"
         android:lineSpacingExtra="4sp"
-        android:text="FIJA UN OBJETIVO IMPORTANTE\nDE AHORRO QUE QUIERAS\nALCANZAR, un móvil, un viaje,\nun coche..."
+        android:text="Pockety TE AYUDARÁ A\nCONSEGUIRLO...\n\n¡COMENZAMOS!"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#2a363f"
         android:textSize="22dp"
-        app:fontFamily="sans-serif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52"
-        tools:visibility="visible" />
+        app:layout_constraintVertical_bias="0.52" />
 
     <Button
         android:id="@+id/next"
@@ -45,8 +44,8 @@
         android:id="@+id/saltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SALTAR"
         android:background="#e5ebef"
+        android:text="SALTAR"
         android:textColor="#2a363f"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +65,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.845"
-        app:srcCompat="@drawable/bullet1" />
+        app:srcCompat="@drawable/bullet2" />
 
     <ImageButton
         android:id="@+id/bullet2"
@@ -91,7 +90,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.845"
-        app:srcCompat="@drawable/bullet2" />
+        app:srcCompat="@drawable/bullet1" />
+
 
     <ImageView
         android:id="@+id/imageView4"
@@ -104,6 +104,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logo" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
