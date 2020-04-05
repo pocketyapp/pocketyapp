@@ -29,7 +29,9 @@
         <activity
             android:name=".MainMenu"
             android:exported="true"/>
-        <activity android:name=".AddObjetivo" />
+        <activity
+            android:name=".AddObjetivo"
+            android:exported="true"/>
     </application>
 
 </manifest>
