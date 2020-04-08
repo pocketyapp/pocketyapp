@@ -12,7 +12,7 @@
         android:layout_width="478dp"
         android:layout_height="578dp"
         android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +20,7 @@
 
     <EditText
 
-        android:id="@+id/editText"
+        android:id="@+id/txt_usuarioCuenta"
         android:layout_width="259dp"
         android:layout_height="52dp"
         android:layout_marginTop="296dp"
@@ -31,6 +31,7 @@
         android:textColor="#000000"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,25 +42,25 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="256dp"
         android:layout_marginRight="256dp"
-        app:layout_constraintEnd_toEndOf="@+id/editText4"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="@+id/txt_emailCuenta"
+        app:layout_constraintTop_toBottomOf="@+id/txt_usuarioCuenta"
         app:srcCompat="@drawable/correo" />
 
     <EditText
 
-        android:id="@+id/editText4"
+        android:id="@+id/txt_emailCuenta"
         android:layout_width="259dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:editable="false"
         android:ems="10"
         android:hint=" EMAIL"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:textColor="#000000"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_usuarioCuenta" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -68,9 +69,34 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="252dp"
         android:layout_marginRight="252dp"
-        app:layout_constraintEnd_toEndOf="@+id/editText"
-        app:layout_constraintTop_toTopOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="@+id/txt_usuarioCuenta"
+        app:layout_constraintTop_toTopOf="@+id/txt_usuarioCuenta"
         app:srcCompat="@drawable/persona" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="21dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="260dp"
+        android:layout_marginRight="260dp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_contraseñaCuenta"
+        app:layout_constraintTop_toBottomOf="@+id/txt_emailCuenta"
+        app:srcCompat="@drawable/candado" />
+
+    <EditText
+        android:id="@+id/txt_contraseñaCuenta"
+        android:layout_width="261dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint=" CONTRASEÑA"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_emailCuenta" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -79,58 +105,33 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="260dp"
         android:layout_marginRight="260dp"
-        app:layout_constraintEnd_toEndOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText4"
+        app:layout_constraintEnd_toEndOf="@+id/txt_contraseñaCuenta2"
+        app:layout_constraintTop_toBottomOf="@+id/txt_contraseñaCuenta"
         app:srcCompat="@drawable/candado" />
 
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="261dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint=" CONTRASEÑA"
-        android:inputType="textPersonName"
-        android:textColor="#000000"
-        android:textColorHint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
-
-    <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/txt_contraseñaCuenta2"
         android:layout_width="261dp"
         android:layout_height="43dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint=" REPETIR CONTRASEÑA"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textColor="#000000"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="21dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="260dp"
-        android:layout_marginRight="260dp"
-        app:layout_constraintEnd_toEndOf="@+id/editText3"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        app:srcCompat="@drawable/candado" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_contraseñaCuenta" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnRegister"
         android:layout_width="223dp"
         android:layout_height="48dp"
         android:layout_marginTop="12dp"
         android:text="REGISTRARSE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
@@ -140,7 +141,7 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
     <TextView
         android:id="@+id/textView3"
