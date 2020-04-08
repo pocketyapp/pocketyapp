@@ -11,7 +11,7 @@
         android:id="@+id/txt_usuarioCuenta"
         android:layout_width="259dp"
         android:layout_height="52dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="316dp"
         android:editable="false"
         android:ems="10"
         android:hint=" USUARIO"
@@ -19,7 +19,7 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,7 +27,7 @@
         android:id="@+id/imageView14"
         android:layout_width="478dp"
         android:layout_height="578dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="108dp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"

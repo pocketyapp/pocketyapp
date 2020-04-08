@@ -8,7 +8,7 @@
     android:clipToPadding="false"
     tools:context=".MainActivity">
 
-    
+
     <TextView
         android:id="@+id/txtOnboarding1"
         android:layout_width="331dp"

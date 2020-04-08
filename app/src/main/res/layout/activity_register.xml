@@ -11,7 +11,7 @@
         android:id="@+id/imageView7"
         android:layout_width="478dp"
         android:layout_height="578dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="68dp"
         app:layout_constraintBottom_toTopOf="@+id/btnRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
@@ -23,7 +23,7 @@
         android:id="@+id/txt_usuarioCuenta"
         android:layout_width="259dp"
         android:layout_height="52dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="308dp"
         android:editable="false"
         android:ems="10"
         android:hint=" USUARIO"
@@ -127,11 +127,11 @@
         android:id="@+id/btnRegister"
         android:layout_width="223dp"
         android:layout_height="48dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:text="REGISTRARSE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_contraseñaCuenta2" />
 
     <TextView
         android:id="@+id/textView2"
