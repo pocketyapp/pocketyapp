@@ -54,7 +54,7 @@ public class Register extends AppCompatActivity {
         emaC = (EditText) findViewById(R.id.txt_emailCuenta);
         contraC = (EditText) findViewById(R.id.txt_contraseñaCuenta);
         contraC2 = (EditText) findViewById(R.id.txt_contraseñaCuenta2);
-        btnRegister = (Button) findViewById(R.id.btnRegister);
+        btnRegister = (Button) findViewById(R.id.btnLogin);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,7 +106,7 @@ public class Register extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task2) {
                             if (task2.isSuccessful()) {
-                                startActivity(new Intent(Register.this, Completo.class));
+                                startActivity(new Intent(Register.this, MainMenu.class));
                                 finish();
                             } else {
                                 Toast.makeText(Register.this, "No se pudieron crear los datos correctamente", Toast.LENGTH_SHORT).show();

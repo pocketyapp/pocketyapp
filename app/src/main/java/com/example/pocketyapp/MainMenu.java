@@ -1,17 +1,29 @@
 package com.example.pocketyapp;
-
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class MainMenu extends AppCompatActivity {
+
+        private Button btnCerrarsesion;
+        TextView infoUsuario;
+        TextView infoEmail;
+
+        private FirebaseAuth mAuth;
+        private DatabaseReference mDatabase;
 
         Button bt;
 
@@ -20,6 +32,12 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
+        btnCerrarsesion = (Button) findViewById(R.id.btnCerrarsesion);
+        infoUsuario = (TextView) findViewById(R.id.infoUsuario);
+        infoEmail = (TextView) findViewById(R.id.infoEmail);
+
+        mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         bt = findViewById(R.id.button_addObjective);
         bt.setOnClickListener(new View.OnClickListener() {
@@ -29,10 +47,42 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
+        btnCerrarsesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signOut();
+                startActivity(new Intent(MainMenu.this, Login.class));
+                finish();
+            }
+        });
+
+        getUserinfo();
+
     }
 
     private void openaddObjetivoView() {
         Intent intent = new Intent(this, AddObjetivo.class);
         startActivity(intent);
+    }
+
+    private void getUserinfo() {
+        String id = mAuth.getCurrentUser().getUid();
+        mDatabase.child("Cuentas").child(id).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    String usuario = dataSnapshot.child("usuario").getValue().toString();
+                    String email = dataSnapshot.child("email").getValue().toString();
+
+                    infoUsuario.setText(usuario);
+                    infoEmail.setText(email);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }

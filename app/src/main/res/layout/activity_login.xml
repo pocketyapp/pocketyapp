@@ -8,18 +8,16 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <EditText
-        android:id="@+id/txt_usuarioCuenta"
-        android:layout_width="259dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="316dp"
-        android:editable="false"
+        android:id="@+id/txt_emailCuenta"
+        android:layout_width="261dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="352dp"
         android:ems="10"
-        android:hint=" USUARIO"
-        android:inputType="textPersonName"
+        android:hint=" EMAIL"
+        android:inputType="textEmailAddress"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,7 +25,7 @@
         android:id="@+id/imageView14"
         android:layout_width="478dp"
         android:layout_height="578dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginBottom="88dp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
@@ -38,11 +36,11 @@
         android:id="@+id/imageView"
         android:layout_width="27dp"
         android:layout_height="26dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="252dp"
         android:layout_marginRight="252dp"
-        app:layout_constraintEnd_toEndOf="@+id/txt_usuarioCuenta"
-        app:layout_constraintTop_toTopOf="@+id/txt_usuarioCuenta"
+        app:layout_constraintEnd_toEndOf="@+id/txt_emailCuenta"
+        app:layout_constraintTop_toTopOf="@+id/txt_emailCuenta"
         app:srcCompat="@drawable/persona" />
 
     <EditText
@@ -57,21 +55,21 @@
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_usuarioCuenta" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_emailCuenta" />
 
     <ImageView
         android:id="@+id/imageView11"
         android:layout_width="21dp"
         android:layout_height="20dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="260dp"
         android:layout_marginRight="260dp"
         app:layout_constraintEnd_toEndOf="@+id/txt_contraseñaCuenta"
-        app:layout_constraintTop_toTopOf="@+id/txt_contraseñaCuenta"
+        app:layout_constraintTop_toBottomOf="@+id/txt_emailCuenta"
         app:srcCompat="@drawable/candado" />
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnLogin"
         android:layout_width="223dp"
         android:layout_height="48dp"
         android:layout_marginTop="32dp"
@@ -79,7 +77,7 @@
         android:text="INICIAR SESION"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_contraseñaCuenta" />
 
     <Button
         android:id="@+id/button2"
@@ -91,7 +89,7 @@
         android:text="REGISTRARSE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     <TextView
         android:id="@+id/textView3"
@@ -103,17 +101,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="204dp"
-        android:layout_marginRight="204dp"
-        android:text="Recordar Contraseña"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_contraseñaCuenta" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
