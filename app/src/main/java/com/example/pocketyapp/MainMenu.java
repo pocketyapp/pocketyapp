@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -14,6 +15,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 
 public class MainMenu extends AppCompatActivity {
@@ -27,6 +30,11 @@ public class MainMenu extends AppCompatActivity {
 
         Button bt;
 
+        ArrayList<Objetivo> arrayList;
+        ElementoObjetivosAdapter adapter;
+        ListView listaObjetivos;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +47,7 @@ public class MainMenu extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        //Botón añadir objetivo
         bt = findViewById(R.id.button_addObjective);
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +57,7 @@ public class MainMenu extends AppCompatActivity {
         });
 
         btnCerrarsesion.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 mAuth.signOut();
@@ -58,7 +68,42 @@ public class MainMenu extends AppCompatActivity {
 
         getUserinfo();
 
+
+        //LISTA DE OBJETIVOS
+
+        listaObjetivos = findViewById(R.id.list_objectives);
+        arrayList = new ArrayList<>();
+        arrayList.add(new Objetivo("Móvil", 400));
+        arrayList.add(new Objetivo("Viaje", 3000));
+
+
+        /*String id = mAuth.getCurrentUser().getUid();
+        mDatabase.child("Cuentas").child(id).child("Objetivos").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+
+                    String nombre = dataSnapshot.child("name").getValue().toString();
+                    String cantidad = dataSnapshot.child("quantity").getValue().toString();
+
+                    arrayList.add(new Objetivo(nombre, Integer.parseInt(cantidad)));
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });*/
+
+        adapter = new ElementoObjetivosAdapter(this, R.layout.objetivo, arrayList);
+        listaObjetivos.setAdapter(adapter);
+        //FIN LISTA OBJETIVOS
+
     }
+
+
 
     private void openaddObjetivoView() {
         Intent intent = new Intent(this, AddObjetivo.class);

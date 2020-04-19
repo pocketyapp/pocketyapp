@@ -7,6 +7,11 @@ public class Objetivo {
     public Objetivo() {
     }
 
+    public Objetivo(String name, int quantity) {
+        Name = name;
+        Quantity = quantity;
+    }
+
     public String getName() {
         return Name;
     }
