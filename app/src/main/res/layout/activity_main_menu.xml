@@ -25,8 +25,8 @@
 
     <ListView
         android:id="@+id/list_objectives"
-        android:layout_width="262dp"
-        android:layout_height="395dp"
+        android:layout_width="239dp"
+        android:layout_height="396dp"
         android:layout_marginStart="74dp"
         android:layout_marginLeft="74dp"
         android:layout_marginEnd="75dp"
