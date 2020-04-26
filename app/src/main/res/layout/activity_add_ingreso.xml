@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#2a363f">
 
     <EditText
-        android:id="@+id/editText_CantidadObjetivo"
+        android:id="@+id/editText_CantidadIngreso"
         android:layout_width="357dp"
         android:layout_height="50dp"
         android:layout_marginStart="29dp"
@@ -18,17 +18,17 @@
         android:ems="10"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:hint="Cantidad objetivo"
+        android:hint="Cantidad ingreso"
         android:inputType="numberDecimal"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_NombreObjetivo"
-        tools:ignore="HardcodedText" />
+       app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_NombreIngreso"
+        tools:ignore="HardcodedText"    />
 
     <Button
-        android:id="@+id/button_guardarObjetivo"
+        android:id="@+id/button_guardarIngreso"
         android:layout_width="357dp"
         android:layout_height="50dp"
         android:layout_marginStart="27dp"
@@ -36,10 +36,10 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="27dp"
         android:layout_marginRight="27dp"
-        android:text="Guardar objetivo"
+        android:text="Guardar ingreso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_CantidadObjetivo"
+        app:layout_constraintTop_toBottomOf="@+id/editText_CantidadIngreso"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -54,10 +54,10 @@
         android:text="@string/cancelar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_guardarObjetivo" />
+        app:layout_constraintTop_toBottomOf="@+id/button_guardarIngreso" />
 
     <EditText
-        android:id="@+id/editText_NombreObjetivo"
+        android:id="@+id/editText_NombreIngreso"
         android:layout_width="357dp"
         android:layout_height="50dp"
         android:layout_marginStart="29dp"
@@ -68,7 +68,7 @@
         android:ems="10"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:hint="nombre_objetivo"
+        android:hint="nombre ingreso"
         android:inputType="text"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"

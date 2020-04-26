@@ -9,20 +9,31 @@
     tools:context=".MainMenu">
 
     <Button
-        android:id="@+id/button_addObjective"
-        android:layout_width="354dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginLeft="29dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginRight="29dp"
-        android:text="Añadir objetivo"
+    android:id="@+id/button_addObjective"
+    android:layout_width="354dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="29dp"
+    android:layout_marginLeft="29dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="29dp"
+    android:layout_marginRight="29dp"
+    android:text="Añadir objetivo"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="HardcodedText" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        style="@style/mySpinnerItemStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Has iniciado sesion en:"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/list_objectives"

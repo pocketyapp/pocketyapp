@@ -5,9 +5,13 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -19,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 
-public class MainMenu extends AppCompatActivity {
+public class MainMenu extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
         private Button btnCerrarsesion;
         TextView infoUsuario;
@@ -101,9 +105,13 @@ public class MainMenu extends AppCompatActivity {
         listaObjetivos.setAdapter(adapter);
         //FIN LISTA OBJETIVOS
 
+        //Creamos Spinner meses
+        Spinner spinner = findViewById(R.id.spinner1);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.meses, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
     }
-
-
 
     private void openaddObjetivoView() {
         Intent intent = new Intent(this, AddObjetivo.class);
@@ -129,5 +137,22 @@ public class MainMenu extends AppCompatActivity {
 
             }
         });
+    }
+
+    //Metodos del Spinner meses
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(), text, Toast.LENGTH_LONG).show();
+
+        if (parent.getItemAtPosition(position).equals("Enero 2020")){
+                Intent intent = new Intent(MainMenu.this, Mes01.class);
+                startActivity(intent);
+            }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

@@ -104,5 +104,20 @@
     <string name="title_activity_add_objetivo">AddObjetivo</string>
     <string name="a_adir_objetivo">AÑADIR OBJETIVO</string>
     <string name="cancelar">CANCELAR</string>
-    <string name="nombre_objetivo">Nombre objetivo</string>
+    <string-array name="meses">
+        <item>Elige un mes</item>
+        <item>Enero 2020</item>
+        <!--<item>Febrero 2020</item>
+        <item>Marzo 2020</item>
+        <item>Abril 2020</item>
+        <item>Mayo 2020</item>
+        <item>Junio 2020</item>
+        <item>Julio 2020</item>
+        <item>Agosto 2020</item>
+        <item>Septiembre 2020</item>
+        <item>Octubre 2020</item>
+        <item>Noviembre 2020</item>
+        <item>Diciembre 2020</item>-->
+    </string-array>
+    <string name="title_activity_mes_enero">MesEnero</string>
 </resources>
