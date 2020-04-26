@@ -6,25 +6,10 @@
     android:layout_height="match_parent"
     android:background="#2a363f"
     android:fitsSystemWindows="true"
+
     tools:context=".MainMenu">
 
-    <Button
-    android:id="@+id/button_addObjective"
-    android:layout_width="354dp"
-    android:layout_height="50dp"
-    android:layout_marginStart="29dp"
-    android:layout_marginLeft="29dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginEnd="29dp"
-    android:layout_marginRight="29dp"
-    android:text="Añadir objetivo"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="1.0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:ignore="HardcodedText" />
-
-    <Spinner
+    <!--<Spinner
         android:id="@+id/spinner1"
         style="@style/mySpinnerItemStyle"
         android:layout_width="wrap_content"
@@ -33,7 +18,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <Button
+        android:id="@+id/button_addObjective"
+        android:layout_width="354dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:text="Añadir objetivo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <ListView
         android:id="@+id/list_objectives"
@@ -46,38 +47,42 @@
 
     <Button
         android:id="@+id/btnCerrarsesion"
-        android:layout_width="232dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="50dp"
-        android:text="CERRAR SESION"
+        android:layout_width="141dp"
+        android:layout_height="52dp"
+        android:text="CERRAR SESIÓN"
+        android:tooltipText="CERRAR SESIÓN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061" />
 
     <TextView
         android:id="@+id/txt_Titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:text="Has iniciado sesion en:"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/infoUsuario"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.006" />
 
     <TextView
         android:id="@+id/infoUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
         android:text="USUARIO:"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/btnCerrarsesion"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.058" />
 
     <TextView
         android:id="@+id/infoEmail"
@@ -85,8 +90,45 @@
         android:layout_height="wrap_content"
         android:text="EMAIL:"
         android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infoUsuario" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.113" />
+
+    <Button
+        android:id="@+id/addIngresos"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:text="AÑADIR INGRESO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.969"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/addGastos"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:text="AÑADIR GASTO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.971"
+        tools:ignore="HardcodedText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

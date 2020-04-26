@@ -23,9 +23,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 
-public class MainMenu extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemSelectedListener*/ {
 
-        private Button btnCerrarsesion;
+        private Button btnCerrarsesion, btn_addIngresos, btn_addGastos;
         TextView infoUsuario;
         TextView infoEmail;
 
@@ -47,6 +47,8 @@ public class MainMenu extends AppCompatActivity implements AdapterView.OnItemSel
         btnCerrarsesion = (Button) findViewById(R.id.btnCerrarsesion);
         infoUsuario = (TextView) findViewById(R.id.infoUsuario);
         infoEmail = (TextView) findViewById(R.id.infoEmail);
+        btn_addIngresos = (Button)findViewById(R.id.addIngresos);
+        btn_addGastos = (Button)findViewById(R.id.addGastos);
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -57,6 +59,28 @@ public class MainMenu extends AppCompatActivity implements AdapterView.OnItemSel
             @Override
             public void onClick(View v) {
                 openaddObjetivoView();
+            }
+        });
+
+        //Botón añadir ingresos
+        btn_addIngresos = findViewById(R.id.addIngresos);
+
+        btn_addIngresos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenu.this, AddIngreso.class);
+                startActivity(intent);
+            }
+        });
+
+        //Botón añadir gastos
+        btn_addGastos = findViewById(R.id.addGastos);
+
+        btn_addGastos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenu.this, AddGasto.class);
+                startActivity(intent);
             }
         });
 
@@ -106,11 +130,11 @@ public class MainMenu extends AppCompatActivity implements AdapterView.OnItemSel
         //FIN LISTA OBJETIVOS
 
         //Creamos Spinner meses
-        Spinner spinner = findViewById(R.id.spinner1);
+        /*Spinner spinner = findViewById(R.id.spinner1);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.meses, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        spinner.setOnItemSelectedListener(this);*/
     }
 
     private void openaddObjetivoView() {
@@ -140,7 +164,7 @@ public class MainMenu extends AppCompatActivity implements AdapterView.OnItemSel
     }
 
     //Metodos del Spinner meses
-    @Override
+    /*@Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_LONG).show();
@@ -149,10 +173,10 @@ public class MainMenu extends AppCompatActivity implements AdapterView.OnItemSel
                 Intent intent = new Intent(MainMenu.this, Mes01.class);
                 startActivity(intent);
             }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void onNothingSelected(AdapterView<?> parent) {
 
-    }
+    }*/
 }

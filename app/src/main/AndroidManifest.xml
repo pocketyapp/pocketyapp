@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AddGasto"></activity>
         <activity android:name=".Mes02" />
         <activity android:name=".Mes01" />
         <activity
@@ -34,8 +35,8 @@
             android:name=".MainMenu"
             android:exported="true" />
         <activity
-        android:name=".AddObjetivo"
-        android:exported="true" />
+            android:name=".AddObjetivo"
+            android:exported="true" />
         <activity
             android:name=".AddIngreso"
             android:exported="true" />

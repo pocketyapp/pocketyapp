@@ -9,8 +9,8 @@
     android:background="#2a363f">
 
     <EditText
-        android:id="@+id/etTipoIngreso"
-        android:hint="Descripción ingreso"
+        android:id="@+id/etTipoGasto"
+        android:hint="Descripción gasto"
         android:layout_width="357dp"
         android:layout_height="50dp"
         android:layout_marginStart="29dp"
@@ -21,17 +21,17 @@
         android:ems="10"
         android:focusable="true"
         android:focusableInTouchMode="true"
-         android:inputType="text"
+        android:inputType="text"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
- />
+        />
 
     <EditText
-        android:id="@+id/etCantIngreso"
-        android:hint="Cantidad ingreso"
+        android:id="@+id/etCantGasto"
+        android:hint="Cantidad gasto"
         android:layout_width="357dp"
         android:layout_height="50dp"
         android:layout_marginStart="29dp"
@@ -42,16 +42,16 @@
         android:ems="10"
         android:focusable="true"
         android:focusableInTouchMode="true"
-         android:inputType="numberDecimal"
+        android:inputType="numberDecimal"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etTipoIngreso"
+        app:layout_constraintTop_toBottomOf="@+id/etTipoGasto"
         tools:ignore="HardcodedText"
- />
+        />
     <EditText
-        android:id="@+id/etFechaIngreso"
+        android:id="@+id/etFechaGasto"
         android:hint="Introduzca fecha"
         android:layout_width="357dp"
         android:layout_height="50dp"
@@ -68,13 +68,13 @@
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCantIngreso"
+        app:layout_constraintTop_toBottomOf="@+id/etCantGasto"
         tools:ignore="HardcodedText"
         />
 
     <Button
-        android:id="@+id/btnSaveIngreso"
-        android:text="Guardar ingreso"
+        android:id="@+id/btnSaveGasto"
+        android:text="Guardar gasto"
         android:layout_width="357dp"
         android:layout_height="50dp"
         android:layout_marginStart="27dp"
@@ -84,7 +84,7 @@
         android:layout_marginRight="27dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etFechaIngreso"
+        app:layout_constraintTop_toBottomOf="@+id/etFechaGasto"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -99,6 +99,6 @@
         android:text="@string/cancelar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSaveIngreso" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSaveGasto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

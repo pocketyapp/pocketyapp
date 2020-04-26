@@ -12,30 +12,30 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class AddIngreso extends AppCompatActivity {
-    private EditText mEtDesIngreso, mEtCantIngreso;
-    private Button mBtnSaveIngreso, mBtnCancelar;
+public class AddGasto extends AppCompatActivity {
+    private EditText mEtDesGasto, mEtCantGasto;
+    private Button mBtnSaveGasto, mBtnCancelar;
     private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_ingreso);
+        setContentView(R.layout.activity_add_gasto);
 
-        mEtDesIngreso = (EditText)findViewById(R.id.etTipoIngreso);
-        mEtCantIngreso = (EditText)findViewById(R.id.etCantIngreso);
-        mBtnSaveIngreso = (Button)findViewById(R.id.btnSaveIngreso);
+        mEtDesGasto = (EditText)findViewById(R.id.etTipoGasto);
+        mEtCantGasto = (EditText)findViewById(R.id.etCantGasto);
+        mBtnSaveGasto = (Button)findViewById(R.id.btnSaveGasto);
         mBtnCancelar = (Button)findViewById(R.id.btnCancelar);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        mBtnSaveIngreso.setOnClickListener(new View.OnClickListener()   {
+        mBtnSaveGasto.setOnClickListener(new View.OnClickListener()   {
             @Override
             public void onClick(View v) {
-                String desIngreso = mEtDesIngreso.getText().toString();
-                String cantIngreso = mEtCantIngreso.getText().toString();
-                mDatabase.child("desingreso").setValue(desIngreso);
-                mDatabase.child("canIngreso").setValue(cantIngreso);
+                String desGasto = mEtDesGasto.getText().toString();
+                String cantGasto = mEtCantGasto.getText().toString();
+                mDatabase.child("desgasto").setValue(desGasto);
+                mDatabase.child("canGastp").setValue(cantGasto);
             }
         });
 
@@ -45,7 +45,7 @@ public class AddIngreso extends AppCompatActivity {
         mBtnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddIngreso.this, MainMenu.class);
+                Intent intent = new Intent(AddGasto.this, MainMenu.class);
                 startActivity(intent);
             }
         });
