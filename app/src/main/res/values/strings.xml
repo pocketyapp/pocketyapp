@@ -120,4 +120,6 @@
         <item>Diciembre 2020</item>-->
     </string-array>
     <string name="title_activity_mes_enero">MesEnero</string>
+    <string name="title_ingreso_list">Ingresos</string>
+    <string name="title_ingreso_detail">Ingreso Detail</string>
 </resources>

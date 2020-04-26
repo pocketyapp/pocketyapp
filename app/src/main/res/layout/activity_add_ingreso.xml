@@ -1,63 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
     android:background="#2a363f">
 
     <EditText
-        android:id="@+id/editText_CantidadIngreso"
-        android:layout_width="357dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginLeft="29dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:ems="10"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:hint="Cantidad ingreso"
-        android:inputType="numberDecimal"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_NombreIngreso"
-        tools:ignore="HardcodedText"    />
-
-    <Button
-        android:id="@+id/button_guardarIngreso"
-        android:layout_width="357dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginLeft="27dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
-        android:text="Guardar ingreso"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_CantidadIngreso"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:id="@+id/button_cancelar"
-        android:layout_width="357dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginLeft="27dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
-        android:text="@string/cancelar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_guardarIngreso" />
-
-    <EditText
-        android:id="@+id/editText_NombreIngreso"
+        android:id="@+id/etTipoIngreso"
+        android:hint="Descripción ingreso"
         android:layout_width="357dp"
         android:layout_height="50dp"
         android:layout_marginStart="29dp"
@@ -68,12 +20,63 @@
         android:ems="10"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:hint="nombre ingreso"
-        android:inputType="text"
+         android:inputType="text"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+ />
+
+    <EditText
+        android:id="@+id/etCantIngreso"
+        android:hint="Cantidad ingreso"
+        android:layout_width="357dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:ems="10"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+         android:inputType="numberDecimal"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTipoIngreso"
+        tools:ignore="HardcodedText"
+ />
+
+    <Button
+        android:id="@+id/btnSaveIngreso"
+        android:text="Guardar ingreso"
+        android:layout_width="357dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCantIngreso"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="357dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:text="@string/cancelar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSaveIngreso" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

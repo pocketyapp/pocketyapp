@@ -26,8 +26,6 @@ public class AddObjetivo extends AppCompatActivity {
     DatabaseReference reff;
     Objetivo objetivo;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
