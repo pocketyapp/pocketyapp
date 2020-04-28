@@ -17,7 +17,7 @@
         android:gravity="center"
         android:inputType="textMultiLine"
         android:lineSpacingExtra="4sp"
-        android:text="FIJA UN OBJETIVO IMPORTANTE\nDE AHORRO QUE QUIERAS\nALCANZAR, un móvil, un viaje,\nun coche..."
+        android:text="FIJA UN OBJETIVO IMPORTANTE\nDE AHORRO QUE QUIERAS\nALCANZAR: un móvil, un viaje,\nun coche..."
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#2a363f"
         android:textSize="22dp"
