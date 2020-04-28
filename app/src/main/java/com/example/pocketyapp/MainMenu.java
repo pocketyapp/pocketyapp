@@ -3,6 +3,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -104,19 +106,19 @@ public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemS
         arrayList.add(new Objetivo("Móvil", 400));
         arrayList.add(new Objetivo("Viaje", 3000));
 
-
         /*String id = mAuth.getCurrentUser().getUid();
-        mDatabase.child("Cuentas").child(id).child("Objetivos").addValueEventListener(new ValueEventListener() {
+        DatabaseReference idRef = mDatabase.child("Cuentas").child(id);
+        idRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-
+                DataSnapshot objetivosSnapshot = dataSnapshot.child("Objetivos");
+                Iterable<DataSnapshot> objetivosChildren = objetivosSnapshot.getChildren();
+                ArrayList<Objetivo> arrayList = new ArrayList<>();
+                for (DataSnapshot objetivo : objetivosChildren){
                     String nombre = dataSnapshot.child("name").getValue().toString();
                     String cantidad = dataSnapshot.child("quantity").getValue().toString();
-
                     arrayList.add(new Objetivo(nombre, Integer.parseInt(cantidad)));
-
-                }
+                 }
             }
 
             @Override

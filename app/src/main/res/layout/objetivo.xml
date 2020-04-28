@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2a363f">
 
     <ImageView
         android:id="@+id/ivObjective"
@@ -20,10 +22,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="14dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/ivObjective"
-        android:text="Nombre objetivo"
-        android:textColor="#009688" />
+        android:text="Nombre"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
 
     <ImageView
         android:id="@+id/ivMoney"
@@ -40,15 +44,16 @@
     <TextView
         android:id="@+id/textCantidad"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:layout_alignStart="@+id/ivMoney"
         android:layout_alignLeft="@+id/ivMoney"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="51dp"
-        android:layout_marginLeft="51dp"
-        android:layout_marginTop="16dp"
-        android:text="Cantidad objetivo"
-        android:textColor="#009688" />
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="10dp"
+        android:text="Cantidad"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
 
 
 </RelativeLayout>
