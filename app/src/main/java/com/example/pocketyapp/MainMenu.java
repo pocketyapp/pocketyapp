@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,6 +22,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -103,32 +106,47 @@ public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemS
 
         listaObjetivos = findViewById(R.id.list_objectives);
         arrayList = new ArrayList<>();
-        arrayList.add(new Objetivo("Móvil", 400));
-        arrayList.add(new Objetivo("Viaje", 3000));
+        adapter = new ElementoObjetivosAdapter(this, R.layout.objetivo, arrayList);
+        listaObjetivos.setAdapter(adapter);
 
-        /*String id = mAuth.getCurrentUser().getUid();
-        DatabaseReference idRef = mDatabase.child("Cuentas").child(id);
-        idRef.addValueEventListener(new ValueEventListener() {
+        String id = mAuth.getCurrentUser().getUid();
+        final String TAG = "MyActivity";
+        Query Objectivesquery = mDatabase.child("Cuentas").child(id).child("Objetivos");
+        Objectivesquery.keepSynced(true);
+        Objectivesquery.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                DataSnapshot objetivosSnapshot = dataSnapshot.child("Objetivos");
-                Iterable<DataSnapshot> objetivosChildren = objetivosSnapshot.getChildren();
-                ArrayList<Objetivo> arrayList = new ArrayList<>();
-                for (DataSnapshot objetivo : objetivosChildren){
-                    String nombre = dataSnapshot.child("name").getValue().toString();
-                    String cantidad = dataSnapshot.child("quantity").getValue().toString();
-                    arrayList.add(new Objetivo(nombre, Integer.parseInt(cantidad)));
-                 }
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Log.d(TAG,"onChildAdded:" + dataSnapshot.getKey());
+                Objetivo objetivo = dataSnapshot.getValue(Objetivo.class);
+                arrayList.add(objetivo);
+                adapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+                Objetivo objetivo = dataSnapshot.getValue(Objetivo.class);
+                arrayList.remove(objetivo);
+                adapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });*/
+        });
 
-        adapter = new ElementoObjetivosAdapter(this, R.layout.objetivo, arrayList);
-        listaObjetivos.setAdapter(adapter);
         //FIN LISTA OBJETIVOS
 
         //Creamos Spinner meses
