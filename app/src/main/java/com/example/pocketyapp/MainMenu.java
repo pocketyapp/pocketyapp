@@ -32,10 +32,8 @@ import java.util.Map;
 public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemSelectedListener*/ {
 
         private Button btnCerrarsesion, btn_addIngresos, btn_addGastos;
-        TextView infoUsuario;
-        TextView infoEmail;
-        TextView infoTotIngresos;
-        TextView infoTotGastos;
+        TextView infoUsuario, infoEmail, infoTotIngresos, infoTotGastos, infoSaldoTotal;
+
 
         private FirebaseAuth mAuth;
         private DatabaseReference mDatabase;
@@ -59,6 +57,7 @@ public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemS
         btn_addGastos = findViewById(R.id.addGastos);
         infoTotIngresos = findViewById(R.id.tvTotIngresos);
         infoTotGastos = findViewById(R.id.tvTotGastos);
+        infoSaldoTotal = findViewById(R.id.tvSaldoTotal);
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -108,6 +107,8 @@ public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemS
 
         getIngresoTotal();
         getGastoTotal();
+
+
 
         //LISTA DE OBJETIVOS
 
@@ -190,6 +191,7 @@ public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemS
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
+
         });
     }
 
@@ -215,7 +217,15 @@ public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemS
 
             }
         });
+
     }
+
+    /*private void getSaldoTotal() {
+        int totGastos = Integer.parseInt(infoTotGastos.getText().toString().trim());
+        int totIngresos = Integer.parseInt(infoTotIngresos.getText().toString().trim());
+        int result = totIngresos - totGastos;
+        infoSaldoTotal.setText(String.valueOf(result));
+    }*/
 
 
     private void getUserinfo() {
