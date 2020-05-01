@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,33 +14,43 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class AddGasto extends AppCompatActivity {
-    private EditText mEtDesGasto, mEtCantGasto;
+    private EditText mEtDesGasto, mEtCantGasto, mEtFechaGasto;
     private Button mBtnSaveGasto, mBtnCancelar;
-    private DatabaseReference mDatabase;
+    FirebaseAuth mAuth;
+    DatabaseReference reff;
+    Gasto gasto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_gasto);
 
-        mEtDesGasto = (EditText)findViewById(R.id.etTipoGasto);
-        mEtCantGasto = (EditText)findViewById(R.id.etCantGasto);
-        mBtnSaveGasto = (Button)findViewById(R.id.btnSaveGasto);
-        mBtnCancelar = (Button)findViewById(R.id.btnCancelar);
+        mEtDesGasto = findViewById(R.id.etTipoGasto);
+        mEtDesGasto.requestFocus();
+        mEtCantGasto = findViewById(R.id.etCantGasto);
+        mEtFechaGasto = findViewById(R.id.etFechaGasto);
+        mBtnSaveGasto = findViewById(R.id.btnSaveGasto);
+        mBtnCancelar = findViewById(R.id.btnCancelar);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        gasto=new Gasto();
+        mAuth = FirebaseAuth.getInstance();
+        reff = FirebaseDatabase.getInstance().getReference();
 
-        mBtnSaveGasto.setOnClickListener(new View.OnClickListener()   {
+        mBtnSaveGasto.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                String desGasto = mEtDesGasto.getText().toString();
-                String cantGasto = mEtCantGasto.getText().toString();
-                mDatabase.child("desgasto").setValue(desGasto);
-                mDatabase.child("canGastp").setValue(cantGasto);
+                int cantidadGasto = Integer.parseInt(mEtCantGasto.getText().toString().trim());
+                gasto.setDescripción(mEtDesGasto.getText().toString().trim());
+                gasto.setCantidad(cantidadGasto);
+                gasto.setFecha(mEtFechaGasto.getText().toString().trim());
+                String id = mAuth.getCurrentUser().getUid();
+
+                reff.child("Cuentas").child(id).child("Movimientos").child("Gastos").push().setValue(gasto);
+                Toast.makeText(AddGasto.this, "Gasto añadido correctamente", Toast.LENGTH_LONG).show();
             }
+
         });
 
-        //Botón cancelar
         mBtnCancelar = findViewById(R.id.btnCancelar);
 
         mBtnCancelar.setOnClickListener(new View.OnClickListener() {

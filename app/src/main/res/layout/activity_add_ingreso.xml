@@ -50,9 +50,9 @@
         app:layout_constraintTop_toBottomOf="@+id/etTipoIngreso"
         tools:ignore="HardcodedText"
  />
+
     <EditText
         android:id="@+id/etFechaIngreso"
-        android:hint="Fecha ingreso"
         android:layout_width="357dp"
         android:layout_height="50dp"
         android:layout_marginStart="29dp"
@@ -63,14 +63,14 @@
         android:ems="10"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:inputType="numberDecimal"
+        android:hint="Fecha ingreso"
+        android:inputType="date"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etCantIngreso"
-        tools:ignore="HardcodedText"
-        />
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/btnSaveIngreso"
