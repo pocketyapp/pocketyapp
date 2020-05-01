@@ -26,6 +26,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 
 public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemSelectedListener*/ {
@@ -33,6 +34,8 @@ public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemS
         private Button btnCerrarsesion, btn_addIngresos, btn_addGastos;
         TextView infoUsuario;
         TextView infoEmail;
+        TextView infoTotIngresos;
+        TextView infoTotGastos;
 
         private FirebaseAuth mAuth;
         private DatabaseReference mDatabase;
@@ -49,11 +52,13 @@ public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemS
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        btnCerrarsesion = (Button) findViewById(R.id.btnCerrarsesion);
-        infoUsuario = (TextView) findViewById(R.id.infoUsuario);
-        infoEmail = (TextView) findViewById(R.id.infoEmail);
-        btn_addIngresos = (Button)findViewById(R.id.addIngresos);
-        btn_addGastos = (Button)findViewById(R.id.addGastos);
+        btnCerrarsesion = findViewById(R.id.btnCerrarsesion);
+        infoUsuario = findViewById(R.id.infoUsuario);
+        infoEmail = findViewById(R.id.infoEmail);
+        btn_addIngresos = findViewById(R.id.addIngresos);
+        btn_addGastos = findViewById(R.id.addGastos);
+        infoTotIngresos = findViewById(R.id.tvTotIngresos);
+        infoTotGastos = findViewById(R.id.tvTotGastos);
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -101,6 +106,8 @@ public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemS
 
         getUserinfo();
 
+        getIngresoTotal();
+        getGastoTotal();
 
         //LISTA DE OBJETIVOS
 
@@ -161,6 +168,55 @@ public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemS
         Intent intent = new Intent(this, AddObjetivo.class);
         startActivity(intent);
     }
+
+    private void getIngresoTotal(){
+        String id = mAuth.getCurrentUser().getUid();
+        Query Ingresosquery = mDatabase.child("Cuentas").child(id).child("Movimientos").child("Ingresos");
+        Ingresosquery.keepSynced(true);
+        Ingresosquery.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int total = 0;
+                for (DataSnapshot ds: dataSnapshot.getChildren()){
+                    Map<String,Object> map = (Map<String,Object>) ds.getValue();
+                    Object cantidad = map.get("cantidad");
+                    int pValue = Integer.parseInt(String.valueOf(cantidad));
+                    total += pValue;
+                    infoTotIngresos.setText(String.valueOf(total));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void getGastoTotal(){
+        String id = mAuth.getCurrentUser().getUid();
+        Query Gastosquery = mDatabase.child("Cuentas").child(id).child("Movimientos").child("Gastos");
+        Gastosquery.keepSynced(true);
+        Gastosquery.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int total = 0;
+                for (DataSnapshot ds: dataSnapshot.getChildren()){
+                    Map<String,Object> map = (Map<String,Object>) ds.getValue();
+                    Object cantidad = map.get("cantidad");
+                    int pValue = Integer.parseInt(String.valueOf(cantidad));
+                    total += pValue;
+                    infoTotGastos.setText(String.valueOf(total));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
 
     private void getUserinfo() {
         String id = mAuth.getCurrentUser().getUid();
