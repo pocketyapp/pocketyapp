@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,7 +31,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 
-public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemSelectedListener*/ {
+public class MainMenu extends AppCompatActivity implements TextWatcher/*implements AdapterView.OnItemSelectedListener*/ {
 
         private Button btnCerrarsesion, btn_addIngresos, btn_addGastos;
         TextView infoUsuario, infoEmail, infoTotIngresos, infoTotGastos, infoSaldoTotal;
@@ -107,6 +109,8 @@ public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemS
 
         getIngresoTotal();
         getGastoTotal();
+        infoTotIngresos.addTextChangedListener(this);
+        infoTotGastos.addTextChangedListener(this);
 
 
 
@@ -220,12 +224,6 @@ public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemS
 
     }
 
-    /*private void getSaldoTotal() {
-        int totGastos = Integer.parseInt(infoTotGastos.getText().toString().trim());
-        int totIngresos = Integer.parseInt(infoTotIngresos.getText().toString().trim());
-        int result = totIngresos - totGastos;
-        infoSaldoTotal.setText(String.valueOf(result));
-    }*/
 
 
     private void getUserinfo() {
@@ -249,6 +247,31 @@ public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemS
         });
     }
 
+
+    //INICIO SALDO TOTAL
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+      try {
+          int totGastos = Integer.parseInt(infoTotGastos.getText().toString().trim());
+          int totIngresos = Integer.parseInt(infoTotIngresos.getText().toString().trim());
+          int result = totIngresos - totGastos;
+          infoSaldoTotal.setText(String.valueOf(result));
+      }catch(NumberFormatException e) {
+      }
+    }
+    //FIN SALDO TOTAL
+
     //Metodos del Spinner meses
     /*@Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -266,3 +289,4 @@ public class MainMenu extends AppCompatActivity /*implements AdapterView.OnItemS
 
     }*/
 }
+
