@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddGasto"></activity>
+        <activity android:name=".VerIngresos"></activity>
+        <activity android:name=".AddGasto" />
         <activity android:name=".Mes02" />
         <activity android:name=".Mes01" />
         <activity
