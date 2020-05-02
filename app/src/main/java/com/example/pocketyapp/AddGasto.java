@@ -47,6 +47,8 @@ public class AddGasto extends AppCompatActivity {
 
                 reff.child("Cuentas").child(id).child("Movimientos").child("Gastos").push().setValue(gasto);
                 Toast.makeText(AddGasto.this, "Gasto añadido correctamente", Toast.LENGTH_LONG).show();
+
+                resetFields();
             }
 
         });
@@ -60,5 +62,19 @@ public class AddGasto extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void resetFields(){
+        EditText temp;
+        final int[] myEditTexts = new int[]{
+                R.id.etTipoGasto,
+                R.id.etCantGasto,
+                R.id.etFechaGasto
+        };
+
+        for(int i =0; i<myEditTexts.length; i++){
+            temp = findViewById(myEditTexts[i]);
+            temp.setText(null);
+        }
     }
 }

@@ -51,6 +51,8 @@ public class AddObjetivo extends AppCompatActivity {
 
                 reff.child("Cuentas").child(id).child("Objetivos").push().setValue(objetivo);
                 Toast.makeText(AddObjetivo.this, "Objetivo añadido correctamente", Toast.LENGTH_LONG).show();
+
+                resetFields();
             }
 
         });
@@ -68,6 +70,19 @@ public class AddObjetivo extends AppCompatActivity {
     private void openMainMenuView() {
         Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
+    }
+
+    private void resetFields(){
+        EditText temp;
+        final int[] myEditTexts = new int[]{
+                R.id.editText_NombreObjetivo,
+                R.id.editText_CantidadObjetivo
+        };
+
+        for(int i =0; i<myEditTexts.length; i++){
+            temp = findViewById(myEditTexts[i]);
+            temp.setText(null);
+        }
     }
 
 

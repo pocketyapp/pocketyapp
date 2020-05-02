@@ -51,6 +51,8 @@ public class AddIngreso extends AppCompatActivity {
 
                 reff.child("Cuentas").child(id).child("Movimientos").child("Ingresos").push().setValue(ingreso);
                 Toast.makeText(AddIngreso.this, "Ingreso añadido correctamente", Toast.LENGTH_LONG).show();
+
+                resetFields();
             }
 
         });
@@ -64,5 +66,19 @@ public class AddIngreso extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void resetFields(){
+        EditText temp;
+        final int[] myEditTexts = new int[]{
+                R.id.etTipoIngreso,
+                R.id.etCantIngreso,
+                R.id.etFechaIngreso
+        };
+
+        for(int i =0; i<myEditTexts.length; i++){
+            temp = findViewById(myEditTexts[i]);
+            temp.setText(null);
+        }
     }
 }
