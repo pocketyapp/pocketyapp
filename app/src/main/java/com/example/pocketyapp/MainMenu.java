@@ -33,19 +33,15 @@ import java.util.Map;
 
 public class MainMenu extends AppCompatActivity implements TextWatcher/*implements AdapterView.OnItemSelectedListener*/ {
 
-        private Button btnCerrarsesion, btn_addIngresos, btn_addGastos;
+        Button bt, btnCerrarsesion, btn_addIngresos, btn_addGastos, btnVerIngresos, btnVerGastos;
         TextView infoUsuario, infoEmail, infoTotIngresos, infoTotGastos, infoSaldoTotal;
-
-
-        private FirebaseAuth mAuth;
-        private DatabaseReference mDatabase;
-
-        Button bt;
 
         ArrayList<Objetivo> arrayList;
         ElementoObjetivosAdapter adapter;
         ListView listaObjetivos;
 
+        private FirebaseAuth mAuth;
+        private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +80,17 @@ public class MainMenu extends AppCompatActivity implements TextWatcher/*implemen
             }
         });
 
+        //Botón ver ingresos
+        btnVerIngresos = findViewById(R.id.btnVerIngresos);
+
+        btnVerIngresos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenu.this, VerIngresos.class);
+                startActivity(intent);
+            }
+        });
+
         //Botón añadir gastos
         btn_addGastos = findViewById(R.id.addGastos);
 
@@ -95,6 +102,19 @@ public class MainMenu extends AppCompatActivity implements TextWatcher/*implemen
             }
         });
 
+        //Botón ver gastos
+        btnVerGastos = findViewById(R.id.btnVerGastos);
+
+        btnVerGastos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenu.this, VerGastos.class);
+                startActivity(intent);
+            }
+        });
+
+
+        //Botón cerrar sesión
         btnCerrarsesion.setOnClickListener(new View.OnClickListener() {
 
             @Override

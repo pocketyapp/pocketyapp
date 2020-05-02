@@ -22,14 +22,14 @@ import com.google.firebase.database.Query;
 
 import java.util.ArrayList;
 
-public class VerIngresos extends AppCompatActivity {
+public class VerGastos extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
 
-    ArrayList<Ingreso> arrayList;
-    ElementoIngresosAdapter adapter;
-    ListView listaIngresos;
+    ArrayList<Gasto> arrayList;
+    ElementoGastosAdapter adapter;
+    ListView listaGastos;
     Button btnVolver;
     TextView tvMovimientos;
 
@@ -41,21 +41,21 @@ public class VerIngresos extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        listaIngresos = findViewById(R.id.list_movimientos);
+        listaGastos = findViewById(R.id.list_movimientos);
         arrayList = new ArrayList<>();
-        adapter = new ElementoIngresosAdapter(this, R.layout.movimiento, arrayList);
-        listaIngresos.setAdapter(adapter);
+        adapter = new ElementoGastosAdapter(this, R.layout.movimiento,arrayList);
+        listaGastos.setAdapter(adapter);
 
         String id = mAuth.getCurrentUser().getUid();
         final String TAG = "MyActivity";
-        Query Ingresosquery = mDatabase.child("Cuentas").child(id).child("Movimientos").child("Ingresos");
-        Ingresosquery.keepSynced(true);
-        Ingresosquery.addChildEventListener(new ChildEventListener() {
+        Query Gastosquery = mDatabase.child("Cuentas").child(id).child("Movimientos").child("Gastos");
+        Gastosquery.keepSynced(true);
+        Gastosquery.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Log.d(TAG,"onChildAdded:" + dataSnapshot.getKey());
-                Ingreso ingreso = dataSnapshot.getValue(Ingreso.class);
-                arrayList.add(ingreso);
+                Gasto gasto = dataSnapshot.getValue(Gasto.class);
+                arrayList.add(gasto);
                 adapter.notifyDataSetChanged();
 
             }
@@ -67,8 +67,8 @@ public class VerIngresos extends AppCompatActivity {
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-                Ingreso ingreso = dataSnapshot.getValue(Ingreso.class);
-                arrayList.remove(ingreso);
+                Gasto gasto = dataSnapshot.getValue(Gasto.class);
+                arrayList.remove(gasto);
                 adapter.notifyDataSetChanged();
 
             }
@@ -83,23 +83,20 @@ public class VerIngresos extends AppCompatActivity {
 
             }
         });
-
         //Botón Volver al menú
         btnVolver = findViewById(R.id.btnVolver);
 
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(VerIngresos.this, MainMenu.class);
+                Intent intent = new Intent(VerGastos.this, MainMenu.class);
                 startActivity(intent);
             }
         });
 
         //Actualizar título
         tvMovimientos = findViewById(R.id.tvMovimientos);
-        tvMovimientos.setText("Tus ingresos");
-
-
+        tvMovimientos.setText("Tus gastos");
 
 
     }
