@@ -22,16 +22,16 @@
 
     <Button
         android:id="@+id/button_addObjective"
-        android:layout_width="354dp"
-        android:layout_height="50dp"
+        android:layout_width="319dp"
+        android:layout_height="46dp"
         android:layout_marginStart="29dp"
         android:layout_marginLeft="29dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="29dp"
         android:layout_marginRight="29dp"
         android:text="Añadir objetivo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.558"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
@@ -47,14 +47,15 @@
 
     <Button
         android:id="@+id/btnCerrarsesion"
-        android:layout_width="112dp"
-        android:layout_height="41dp"
-        android:text="Cerrar sesión"
+        android:layout_width="43dp"
+        android:layout_height="35dp"
+        android:background="@drawable/apagar"
+        android:contentDescription="Cerrar sesión"
         android:textSize="10sp"
         android:tooltipText="CERRAR SESIÓN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintHorizontal_bias="0.896"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -91,12 +92,13 @@
         android:layout_height="wrap_content"
         android:text="Tu saldo total es:"
         android:textColor="#FFFFFF"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.707" />
+        app:layout_constraintVertical_bias="0.692" />
 
     <TextView
         android:id="@+id/txt_Titulo3"
@@ -106,10 +108,10 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintHorizontal_bias="0.886"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.839" />
+        app:layout_constraintVertical_bias="0.841" />
 
     <TextView
         android:id="@+id/infoUsuario"
@@ -140,55 +142,49 @@
 
     <Button
         android:id="@+id/addIngresos"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginLeft="29dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginRight="29dp"
-        android:text="AÑADIR INGRESO"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ui"
+        android:contentDescription="Añadir ingreso"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.969"
+        app:layout_constraintVertical_bias="0.949"
         tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/addGastos"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginLeft="29dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginRight="29dp"
-        android:text="AÑADIR GASTO"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ui"
+        android:contentDescription="Añadir gasto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.679"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971"
+        app:layout_constraintVertical_bias="0.949"
         tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/tvTotIngresos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="25dp"
         android:inputType="none"
-        android:text="Total ingresos"
+        android:text="Total"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/addIngresos"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_Titulo2"
-        app:layout_constraintVertical_bias="0.166" />
+        app:layout_constraintVertical_bias="0.041" />
 
     <TextView
         android:id="@+id/tvSaldoTotal"
@@ -198,30 +194,55 @@
         android:layout_marginBottom="112dp"
         android:text="Saldo Total"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/addIngresos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_Titulo4" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_Titulo4"
+        app:layout_constraintVertical_bias="0.117" />
 
     <TextView
         android:id="@+id/tvTotGastos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="91dp"
-        android:layout_marginLeft="91dp"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="53dp"
-        android:layout_marginRight="53dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginRight="92dp"
         android:layout_marginBottom="20dp"
-        android:text="Total gastos"
+        android:text="Total"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/addGastos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvTotIngresos"
-        app:layout_constraintTop_toBottomOf="@+id/txt_Titulo3" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_Titulo3"
+        app:layout_constraintVertical_bias="0.142" />
+
+    <Button
+        android:id="@+id/btnVerIngresos"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/goggles"
+        android:contentDescription="Ver ingresos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/addGastos"
+        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintStart_toEndOf="@+id/addIngresos"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotIngresos"
+        app:layout_constraintVertical_bias="0.285" />
+
+    <Button
+        android:id="@+id/btnVerGastos"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/goggles"
+        android:contentDescription="Ver gastos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.244"
+        app:layout_constraintStart_toEndOf="@+id/addGastos"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotGastos"
+        app:layout_constraintVertical_bias="0.285" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
