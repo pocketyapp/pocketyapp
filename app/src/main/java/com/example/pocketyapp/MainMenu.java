@@ -27,14 +27,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Currency;
 import java.util.Map;
 
 
 public class MainMenu extends AppCompatActivity implements TextWatcher/*implements AdapterView.OnItemSelectedListener*/ {
 
         Button bt, btnCerrarsesion, btn_addIngresos, btn_addGastos, btnVerIngresos, btnVerGastos;
-        TextView infoUsuario, infoEmail, infoTotIngresos, infoTotGastos, infoSaldoTotal;
+        TextView infoUsuario, infoEmail, infoTotIngresos, infoTotGastos, infoSaldoTotal, TotIngresoshidden, TotGastoshidden;
 
         ArrayList<Objetivo> arrayList;
         ElementoObjetivosAdapter adapter;
@@ -56,6 +58,8 @@ public class MainMenu extends AppCompatActivity implements TextWatcher/*implemen
         infoTotIngresos = findViewById(R.id.tvTotIngresos);
         infoTotGastos = findViewById(R.id.tvTotGastos);
         infoSaldoTotal = findViewById(R.id.tvSaldoTotal);
+        TotIngresoshidden = findViewById(R.id.tvTotIngresoshidden);
+        TotGastoshidden = findViewById(R.id.tvTotGastoshidden);
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -181,6 +185,7 @@ public class MainMenu extends AppCompatActivity implements TextWatcher/*implemen
 
         //FIN LISTA OBJETIVOS
 
+
         //Creamos Spinner meses
         /*Spinner spinner = findViewById(R.id.spinner1);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.meses, android.R.layout.simple_spinner_item);
@@ -207,7 +212,9 @@ public class MainMenu extends AppCompatActivity implements TextWatcher/*implemen
                     Object cantidad = map.get("cantidad");
                     int pValue = Integer.parseInt(String.valueOf(cantidad));
                     total += pValue;
-                    infoTotIngresos.setText(String.valueOf(total));
+                    String EUROtotal = currencyFormatter(total);
+                    infoTotIngresos.setText(String.valueOf(EUROtotal));
+                    TotIngresoshidden.setText(String.valueOf(total));
                 }
             }
 
@@ -232,7 +239,9 @@ public class MainMenu extends AppCompatActivity implements TextWatcher/*implemen
                     Object cantidad = map.get("cantidad");
                     int pValue = Integer.parseInt(String.valueOf(cantidad));
                     total += pValue;
-                    infoTotGastos.setText(String.valueOf(total));
+                    String EUROtotal = currencyFormatter(total);
+                    infoTotGastos.setText(String.valueOf(EUROtotal));
+                    TotGastoshidden.setText(String.valueOf(total));
                 }
             }
 
@@ -283,14 +292,24 @@ public class MainMenu extends AppCompatActivity implements TextWatcher/*implemen
     public void afterTextChanged(Editable s) {
 
       try {
-          int totGastos = Integer.parseInt(infoTotGastos.getText().toString().trim());
-          int totIngresos = Integer.parseInt(infoTotIngresos.getText().toString().trim());
+          int totGastos = Integer.parseInt(TotGastoshidden.getText().toString().trim());
+          int totIngresos = Integer.parseInt(TotIngresoshidden.getText().toString().trim());
           int result = totIngresos - totGastos;
-          infoSaldoTotal.setText(String.valueOf(result));
+          String EUROresult = currencyFormatter(result);
+          infoSaldoTotal.setText(String.valueOf(EUROresult));
       }catch(NumberFormatException e) {
       }
     }
     //FIN SALDO TOTAL
+
+    //FORMAT NUMBER
+    public String currencyFormatter(int num){
+        NumberFormat format = NumberFormat.getCurrencyInstance();
+        format.setMaximumFractionDigits(0);
+        format.setCurrency(Currency.getInstance("EUR"));
+        return format.format(num);
+    }
+
 
     //Metodos del Spinner meses
     /*@Override
@@ -308,5 +327,6 @@ public class MainMenu extends AppCompatActivity implements TextWatcher/*implemen
     public void onNothingSelected(AdapterView<?> parent) {
 
     }*/
+
 }
 

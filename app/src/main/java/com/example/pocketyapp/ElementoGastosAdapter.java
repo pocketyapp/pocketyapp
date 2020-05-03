@@ -12,7 +12,9 @@ import com.example.pocketyapp.Gasto;
 import com.example.pocketyapp.Ingreso;
 import com.example.pocketyapp.R;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Currency;
 
 public class ElementoGastosAdapter extends BaseAdapter {
 
@@ -65,9 +67,18 @@ public class ElementoGastosAdapter extends BaseAdapter {
         final Gasto gasto = arrayList.get(position);
 
         viewHolder.textDescripcion.setText(gasto.getDescripción());
-        viewHolder.textCantidad.setText(String.valueOf(gasto.getCantidad()));
+        String cantidadEURO = currencyFormatter(gasto.getCantidad());
+        viewHolder.textCantidad.setText(String.valueOf(cantidadEURO));
         viewHolder.textFecha.setText(gasto.getFecha());
 
         return convertView;
+    }
+
+    //FORMAT NUMBER
+    public String currencyFormatter(int num){
+        NumberFormat format = NumberFormat.getCurrencyInstance();
+        format.setMaximumFractionDigits(0);
+        format.setCurrency(Currency.getInstance("EUR"));
+        return format.format(num);
     }
 }

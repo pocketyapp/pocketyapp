@@ -8,7 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Currency;
 
 public class ElementoIngresosAdapter extends BaseAdapter {
 
@@ -60,9 +62,18 @@ public class ElementoIngresosAdapter extends BaseAdapter {
         final Ingreso ingreso = arrayList.get(position);
 
         viewHolder.textDescripcion.setText(ingreso.getDescripción());
-        viewHolder.textCantidad.setText(String.valueOf(ingreso.getCantidad()));
+        String cantidadEURO = currencyFormatter(ingreso.getCantidad());
+        viewHolder.textCantidad.setText(String.valueOf(cantidadEURO));
         viewHolder.textFecha.setText(ingreso.getFecha());
 
         return convertView;
+    }
+
+    //FORMAT NUMBER
+    public String currencyFormatter(int num){
+        NumberFormat format = NumberFormat.getCurrencyInstance();
+        format.setMaximumFractionDigits(0);
+        format.setCurrency(Currency.getInstance("EUR"));
+        return format.format(num);
     }
 }

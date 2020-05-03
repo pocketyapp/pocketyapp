@@ -8,7 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Currency;
 
 public class ElementoObjetivosAdapter extends BaseAdapter {
 
@@ -62,8 +64,17 @@ public class ElementoObjetivosAdapter extends BaseAdapter {
         final Objetivo objetivo = arrayList.get(position);
 
         viewHolder.textNombre.setText(objetivo.getName());
-        viewHolder.textCantidad.setText(String.valueOf(objetivo.getQuantity()));
+        String cantidadEURO = currencyFormatter(objetivo.getQuantity());
+        viewHolder.textCantidad.setText(String.valueOf(cantidadEURO));
 
         return convertView;
+    }
+
+    //FORMAT NUMBER
+    public String currencyFormatter(int num){
+        NumberFormat format = NumberFormat.getCurrencyInstance();
+        format.setMaximumFractionDigits(0);
+        format.setCurrency(Currency.getInstance("EUR"));
+        return format.format(num);
     }
 }

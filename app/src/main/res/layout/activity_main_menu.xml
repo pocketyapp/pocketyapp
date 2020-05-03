@@ -189,6 +189,25 @@
         app:layout_constraintVertical_bias="0.041" />
 
     <TextView
+        android:id="@+id/tvTotIngresoshidden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="25dp"
+        android:inputType="none"
+        android:text="Total"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/addIngresos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Titulo2"
+        app:layout_constraintVertical_bias="0.041" />
+
+    <TextView
         android:id="@+id/tvSaldoTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -216,6 +235,24 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/addGastos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Titulo3"
+        app:layout_constraintVertical_bias="0.142" />
+
+    <TextView
+        android:id="@+id/tvTotGastoshidden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginRight="92dp"
+        android:layout_marginBottom="20dp"
+        android:text="Total"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/addGastos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_Titulo3"
@@ -259,7 +296,5 @@
         app:layout_constraintHorizontal_bias="0.182"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infoEmail" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
