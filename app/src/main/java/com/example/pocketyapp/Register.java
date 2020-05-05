@@ -29,6 +29,7 @@ public class Register extends AppCompatActivity {
     private EditText contraC;
     private EditText contraC2;
 
+    private Button btnIniciar;
     private Button btnRegister;
 
     private String usuario = "";
@@ -55,6 +56,14 @@ public class Register extends AppCompatActivity {
         contraC = (EditText) findViewById(R.id.txt_contraseñaCuenta);
         contraC2 = (EditText) findViewById(R.id.txt_contraseñaCuenta2);
         btnRegister = (Button) findViewById(R.id.btnLogin);
+        btnIniciar = (Button) findViewById(R.id.btnIniciar);
+
+        btnIniciar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Register.this, Login.class));
+            }
+        });
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +95,8 @@ public class Register extends AppCompatActivity {
         });
 
     }
+
+
 
 
     private void registerUser() {
