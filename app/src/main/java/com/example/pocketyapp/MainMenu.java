@@ -133,8 +133,8 @@ public class MainMenu extends AppCompatActivity implements TextWatcher/*implemen
 
         getIngresoTotal();
         getGastoTotal();
-        infoTotIngresos.addTextChangedListener(this);
-        infoTotGastos.addTextChangedListener(this);
+        TotGastoshidden.addTextChangedListener(this);
+        TotIngresoshidden.addTextChangedListener(this);
 
 
 
@@ -285,20 +285,19 @@ public class MainMenu extends AppCompatActivity implements TextWatcher/*implemen
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+        try {
+            int totGastos = Integer.parseInt(TotGastoshidden.getText().toString().trim());
+            int totIngresos = Integer.parseInt(TotIngresoshidden.getText().toString().trim());
+            int result = totIngresos - totGastos;
+            String EUROresult = currencyFormatter(result);
+            infoSaldoTotal.setText(String.valueOf(EUROresult));
+        }catch(NumberFormatException e) {
+        }
     }
 
     @Override
     public void afterTextChanged(Editable s) {
 
-      try {
-          int totGastos = Integer.parseInt(TotGastoshidden.getText().toString().trim());
-          int totIngresos = Integer.parseInt(TotIngresoshidden.getText().toString().trim());
-          int result = totIngresos - totGastos;
-          String EUROresult = currencyFormatter(result);
-          infoSaldoTotal.setText(String.valueOf(EUROresult));
-      }catch(NumberFormatException e) {
-      }
     }
     //FIN SALDO TOTAL
 
